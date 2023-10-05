@@ -5,7 +5,7 @@ using UnityEngine;
 public class MovementController : MonoBehaviour, IMoveable
 {
     public float MovementSpeed => _movementSpeed;
-    [SerializeField] private float _movementSpeed = 15f;
+    [SerializeField] private float _movementSpeed = 5.5f;
     public float TurnSpeed => _turnSpeed;
     [SerializeField] private float _turnSpeed = 100f;
 
