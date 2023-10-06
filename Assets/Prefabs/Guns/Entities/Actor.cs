@@ -14,6 +14,7 @@ public class Actor : MonoBehaviour, IDamageable
     public EntitieStats Stats => stats;
     [SerializeField] protected EntitieStats stats;
     [SerializeField] private int _life; //currentLife
+    [SerializeField] private LayerMask _owner;
     #endregion
 
     #region UNITY_EVENTS
@@ -21,6 +22,7 @@ public class Actor : MonoBehaviour, IDamageable
     {
         _life = MaxLife;
         EventsManager.instance.CharacterLifeChange(Life,MaxLife);
+        EventsManager.instance.AvatarChange(Enums.AvatarFace.NormalFace);
     }
     #endregion
 
@@ -28,7 +30,16 @@ public class Actor : MonoBehaviour, IDamageable
     public void TakeDamage(int damage)
     {
         _life -= damage; 
-        EventsManager.instance.CharacterLifeChange(Life,MaxLife);
+        if (name.Equals("Character"))
+        {
+            EventsManager.instance.CharacterLifeChange(Life,MaxLife);
+        }
+
+        if(_life < (MaxLife * 0.25f))
+        {
+            EventsManager.instance.AvatarChange(Enums.AvatarFace.BloodyFace);
+        }
+
         Debug.Log($"{name} Hit -> Life {_life}!");
         if(_life <= 0) Die();
     }

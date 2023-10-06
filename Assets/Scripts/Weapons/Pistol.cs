@@ -11,6 +11,6 @@ public class Pistol : Gun
         
         GameObject bullet = Instantiate(BulletPrefab, transform.position, transform.rotation, BulletContainer);
         bullet.GetComponent<BasicBullet>().SetOwner(this);
-        _currentBulletCount--;
+        UpdateBulletCount();
     }
 }

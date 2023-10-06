@@ -26,7 +26,17 @@ public abstract class Gun : MonoBehaviour, IGun
     #endregion
 
     #region IGUN_MEHTODS
-    public void Reload() => _currentBulletCount = AmmoCapacity;
+    public void Reload() 
+    {
+        _currentBulletCount = AmmoCapacity;
+        EventsManager.instance.BulletCountChange(_currentBulletCount,AmmoCapacity);
+    }
     public virtual void Shoot() => Debug.Log("Shoot!!");
+
+    protected void UpdateBulletCount()
+    {
+        _currentBulletCount--;
+        EventsManager.instance.BulletCountChange(_currentBulletCount,AmmoCapacity);
+    }
     #endregion
 }

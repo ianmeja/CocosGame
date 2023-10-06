@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Enums;
 
 public class EventsManager : MonoBehaviour
 {
@@ -24,11 +25,36 @@ public class EventsManager : MonoBehaviour
     #endregion
 
     #region UI_ELEMENTS_Update
+    // LIFE BAR
     public event Action<int,int> OnCharacterLifeChange;
 
     public void CharacterLifeChange(int currentLife, int maxLife)
     {
         if(OnCharacterLifeChange != null) OnCharacterLifeChange(currentLife, maxLife);
+    }
+    
+    // WEAPONS 
+    public event Action<Weapon> OnWeaponChange;
+    public event Action<int,int> OnBulletCountChange;
+
+    public void WeaponChange(Weapon id)
+    {
+        if (OnWeaponChange != null) OnWeaponChange(id);
+    }
+
+    public void BulletCountChange(int bulletCount, int maxBullet)
+    {
+        if (OnBulletCountChange !=null) OnBulletCountChange(bulletCount,maxBullet);
+
+    }
+
+    // AVATAR 
+    public event Action<AvatarFace> OnAvatarChange;
+    
+    public void AvatarChange(AvatarFace id)
+    {
+        if (OnAvatarChange !=null) OnAvatarChange(id);
+
     }
     #endregion
 }

@@ -21,7 +21,7 @@ public class Machinegun : Gun
                 BulletContainer);
             bullet.GetComponent<BasicBullet>().SetOwner(this);
 
-            _currentBulletCount--;
+            UpdateBulletCount();
 
         }
         

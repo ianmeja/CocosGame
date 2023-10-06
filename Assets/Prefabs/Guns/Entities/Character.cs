@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Enums;
 
 public class Character : Actor
 {
@@ -45,9 +46,9 @@ public class Character : Actor
         if(Input.GetKeyDown(_reload)) EventQueueManager.instance.AddCommand(_cmdReload);
 
         //Equip Bullet
-        if(Input.GetKeyDown(_GunSlot1)) SwitchGuns(0);
-        if(Input.GetKeyDown(_GunSlot2)) SwitchGuns(1);
-        if(Input.GetKeyDown(_GunSlot3)) SwitchGuns(2);
+        if(Input.GetKeyDown(_GunSlot1)) SwitchGuns(Weapon.Pistol);
+        if(Input.GetKeyDown(_GunSlot2)) SwitchGuns(Weapon.Machinegun);
+        if(Input.GetKeyDown(_GunSlot3)) SwitchGuns(Weapon.Shotgun);
 
         //GameOver conditions
         if(Input.GetKeyDown(KeyCode.Return)) EventsManager.instance.EventGameOver(true);
@@ -77,15 +78,17 @@ public class Character : Actor
     }
     #endregion
 
-    private void SwitchGuns(int index){
+    private void SwitchGuns(Weapon index){
         foreach(Gun gun in _guns){
             gun.gameObject.SetActive(false);
         }
-        _guns[index].gameObject.SetActive(true);
-        _currentGun = _guns[index];
+        _guns[(int)index].gameObject.SetActive(true);
+        _currentGun = _guns[(int)index];
+
         _cmdAttack = new CmdAttack(_currentGun);
         _cmdReload = new CmdReload(_currentGun);
-        EventQueueManager.instance.AddCommand(_cmdReload);
 
+        EventQueueManager.instance.AddCommand(_cmdReload);
+        EventsManager.instance.WeaponChange(index);
     }
 }

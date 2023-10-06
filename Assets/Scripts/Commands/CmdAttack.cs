@@ -10,6 +10,9 @@ public class CmdAttack : ICommand
     {
         _gun = gun;
     }
-    public void Do() => _gun.Shoot();
+    public void Do()
+    {
+        EventsManager.instance.AvatarChange(Enums.AvatarFace.ActionFace);
+        _gun.Shoot();
+    } 
 }
-    
