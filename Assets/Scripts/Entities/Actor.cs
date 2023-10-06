@@ -30,7 +30,7 @@ public class Actor : MonoBehaviour, IDamageable
     public void TakeDamage(int damage)
     {
         _life -= damage; 
-        if (name.Equals("Character"))
+        if (name.Equals("TT_demo_police"))
         {
             EventsManager.instance.CharacterLifeChange(Life,MaxLife);
         }
@@ -47,7 +47,7 @@ public class Actor : MonoBehaviour, IDamageable
     {
         Debug.Log($"{name} Died!!!!");
         
-        if(name.Equals("Character")) EventsManager.instance.EventGameOver(false);
+        if(name.Equals("TT_demo_police")) EventsManager.instance.EventGameOver(false);
         else Destroy(gameObject);
     }
     #endregion
