@@ -13,8 +13,7 @@ GameObject:
   - component: {fileID: 5805657486819522134}
   - component: {fileID: 5941698232999864210}
   - component: {fileID: 6080546561200330820}
-  - component: {fileID: 2485919537156932858}
-  - component: {fileID: 8024325557572860891}
+  - component: {fileID: 5004556341005956893}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
@@ -32,6 +31,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 9, y: 1, z: -1.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -55,6 +55,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -63,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c10a0078699dcee4aa288eb655b29557, type: 2}
+  - {fileID: 2100000, guid: 423615b46ecbc48dab697f4cc1a9d74f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -115,7 +116,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &2485919537156932858
+--- !u!114 &5004556341005956893
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,20 +125,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 5314159284880715088}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c49cb247de6438c49b73ef3fe67b6b1a, type: 3}
+  m_Script: {fileID: 11500000, guid: 844a1567b62854772a3ddea39e0fd05d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats: {fileID: 11400000, guid: 8f98bd36250134c7ab41bf0363fb6fd1, type: 2}
   _life: 0
---- !u!114 &8024325557572860891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5314159284880715088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ce7e9cbff27d2f428e7299414d1da2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _stats: {fileID: 11400000, guid: 757240dcb21186b42aa4cb6f06e1aa38, type: 2}

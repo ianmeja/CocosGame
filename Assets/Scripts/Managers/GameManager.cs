@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static Enums;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -27,6 +29,12 @@ public class GameManager : MonoBehaviour
         _gameOverMessage.color = isVictory ? Color.cyan : Color.red;
 
         //cambio de escena
+        Invoke("LoadCreditsScene", 3);
+    }
+
+    private void LoadCreditsScene()
+    {
+        SceneManager.LoadScene(_isGameOver && _isVictory ? (int)Levels.Victory : (int)Levels.Defeat);
     }
     #endregion
 }
