@@ -5,7 +5,7 @@ using UnityEngine;
 public interface IMoveable
 {
     float MovementSpeed{get ;}
-    float TurnSpeed {get ;}
+    float RotationSpeed {get ;}
     void Move(Vector3 direction);
     void Turn(Vector3 direction);
 }

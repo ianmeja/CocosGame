@@ -7,17 +7,14 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
-    guid: db557305bc43848638e8c341b5b02687
+    guid: 20fb4e686fa67364081b048eb96520a2
   - enabled: 1
-    path: Assets/Scenes/LoadScreen.unity
-    guid: 7642b362af45a4aa2b1ec6070713d465
+    path: Assets/Scenes/LevelLoader.unity
+    guid: ccc7dfc0b7bf8d1408b55f24d87849f2
   - enabled: 1
-    path: Assets/Scenes/Level 1.unity
+    path: Assets/Scenes/Level.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/Victory.unity
-    guid: 538239330c2cb4f5c8f0144fc0b026c0
-  - enabled: 1
-    path: Assets/Scenes/Defeat.unity
-    guid: 5ac0f5786b21d4475b61462e6dccd7a4
+    path: Assets/Scenes/Endgame.unity
+    guid: 564e07246c7e3d04aa91bbdda96e366c
   m_configObjects: {}

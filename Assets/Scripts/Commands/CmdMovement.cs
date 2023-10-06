@@ -9,7 +9,7 @@ public class CmdMovement : ICommand
     private Vector3 _direction;
     private float _speed;
 
-    public CmdMovement(Transform transform, Vector3 direction,float speed)
+    public CmdMovement(Transform transform, Vector3 direction, float speed)
     {
         _transform = transform;
         _direction = direction;

@@ -12,10 +12,10 @@ TagManager:
   - Water
   - UI
   - Character
-  - Layer 1
-  - Layer 2
-  - Layer 3
-  - 
+  - Destructible
+  - Enemy
+  - Character_Bullet
+  - Enemy_Bullet
   - 
   - 
   - 
