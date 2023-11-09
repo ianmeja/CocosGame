@@ -39,8 +39,8 @@ public class Enemy : MonoBehaviour
             case 2:
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, angle, 0.5f);
                 transform.Translate(Vector3.forward * 1 * Time.deltaTime);
+                ani.SetBool("walk", true);
                 break;
-
         }
     }
 
