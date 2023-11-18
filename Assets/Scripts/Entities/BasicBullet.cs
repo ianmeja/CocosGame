@@ -14,7 +14,7 @@ public class BasicBullet : MonoBehaviour, IBullet
     #endregion
 
     #region PRIVATE_PROPERTIES
-    [SerializeField] private float _speed = 30f;
+    [SerializeField] private float _speed = 100f;
     [SerializeField] private float _lifetime = 3f;
     private Collider _collider;
     private Rigidbody _rigidbody;
