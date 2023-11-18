@@ -16,7 +16,7 @@ public class LoadScreenManager : MonoBehaviour
     }
 
     IEnumerator LoadSceneAsync()
-    {
+    { 
         AsyncOperation operation = SceneManager.LoadSceneAsync((int)Levels.Level_1);
         float progress = 0;
 
