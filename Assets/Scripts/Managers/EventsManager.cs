@@ -22,6 +22,11 @@ public class EventsManager : MonoBehaviour
     {
         if (OnGameOver != null) OnGameOver(isVictory);
     }
+    public event Action OnOleadaActivada;
+    public void EventOleada()
+    {
+        if (OnOleadaActivada != null) OnOleadaActivada();
+    }
     #endregion
 
     #region UI_ELEMENTS_Update

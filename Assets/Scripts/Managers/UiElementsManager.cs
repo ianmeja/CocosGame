@@ -11,9 +11,10 @@ public class UiElementsManager : MonoBehaviour
     {
         EventsManager.instance.OnCharacterLifeChange += OnCharacterLifeChange;
         EventsManager.instance.OnWeaponChange += OnWeaponChange;
-        EventsManager.instance.OnBulletCountChange+= OnBulletCountChange;
+        EventsManager.instance.OnBulletCountChange += OnBulletCountChange;
+        EventsManager.instance.OnAvatarChange += OnAvatarChange;
 
-        EventsManager.instance.OnAvatarChange+= OnAvatarChange;
+        StartCoroutine(ContadorTotal());
     }
     #endregion
 
@@ -25,8 +26,8 @@ public class UiElementsManager : MonoBehaviour
     private void OnCharacterLifeChange(int currentLife, int maxLife)
     {
         _lifePercentValue = (float)currentLife / (float)maxLife;
-        Color color = _lifePercentValue < .1f ? Color.red 
-                             : _lifePercentValue < .25f ? Color.yellow 
+        Color color = _lifePercentValue < .1f ? Color.red
+                             : _lifePercentValue < .25f ? Color.yellow
                              : Color.green;
 
         _lifebar.fillAmount = _lifePercentValue;
@@ -55,17 +56,40 @@ public class UiElementsManager : MonoBehaviour
     {
         _avatar.sprite = _avatarSprites[(int)id];
 
-        if(id==AvatarFace.ActionFace)
+        if (id == AvatarFace.ActionFace)
         {
-            Invoke("UpdateActionAvatarFace",2);
+            Invoke("UpdateActionAvatarFace", 2);
         }
     }
     private void UpdateActionAvatarFace()
     {
-        _avatar.sprite = _lifePercentValue > .25f 
-            ? _avatarSprites[(int)AvatarFace.NormalFace] 
+        _avatar.sprite = _lifePercentValue > .25f
+            ? _avatarSprites[(int)AvatarFace.NormalFace]
             : _avatarSprites[(int)AvatarFace.BloodyFace];
     }
+    #endregion
 
+    #region TIEMPO_UI_LOGIC
+    [SerializeField] private Text _tiempoRestanteText;
+    private float _tiempoTotal = 120f; // 2 minutos en segundos
+
+    private IEnumerator ContadorTotal()
+    {
+        while (_tiempoTotal > 0)
+        {
+            int minutos = Mathf.FloorToInt(_tiempoTotal / 60);
+            int segundos = Mathf.FloorToInt(_tiempoTotal % 60);
+            segundos = Mathf.Clamp(segundos, 0, 59);
+
+            if(_tiempoTotal < 120f){
+                _tiempoRestanteText.text = string.Format("{0}:{1:00}", minutos, segundos);
+            }
+            yield return null;
+            _tiempoTotal -= Time.deltaTime;
+        }
+
+        _tiempoRestanteText.text = "¡Fin!";
+    }
     #endregion
 }
+

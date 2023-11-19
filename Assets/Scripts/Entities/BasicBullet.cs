@@ -44,17 +44,14 @@ public class BasicBullet : MonoBehaviour, IBullet
     private void OnTriggerEnter(Collider other)
     {
         if(((1<<other.gameObject.layer) & _hittableMask)!= 0)
-        {
-            // other.GetComponent<Actor>()?.TakeDamage(_owner.Damage);
-        
+        {        
             if(other.GetComponent<IDamageable>() != null)
             {
                 EventQueueManager.instance.AddCommand(
                     new CmdApplyDamage(other.GetComponent<IDamageable>(),_owner.Damage));
             }
-
-            // Die();
         }
+        // Die(); ARREGLAR ESTO PARA QUE NO CHOQUE CONTRA EL POLICIA
     }
     #endregion
 
