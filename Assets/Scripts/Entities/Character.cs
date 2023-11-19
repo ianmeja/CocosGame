@@ -11,6 +11,8 @@ public class Character : Actor
     [SerializeField] private CharacterStats _characterStats;
     private CmdAttack _cmdAttack;
     private CmdReload _cmdReload;
+
+    private Animator _animator;
     
     #region KEY_BINDINGS
     [SerializeField] private KeyCode _moveForward = KeyCode.W;
@@ -37,6 +39,9 @@ public class Character : Actor
         SwitchGuns(0);
 
         InitMovementCommands();
+        
+        // Obtener el componente Animator
+        _animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -53,6 +58,15 @@ public class Character : Actor
         //GameOver conditions
         if(Input.GetKeyDown(KeyCode.Return)) EventsManager.instance.EventGameOver(true);
         if(Input.GetKeyDown(KeyCode.Backspace)) TakeDamage(7);
+    
+        if (Input.GetKey(_moveForward) || Input.GetKey(_moveBack) || Input.GetKey(_moveLeft) || Input.GetKey(_moveRight))
+        {
+            _animator.SetBool("walk", true);
+        }
+        else
+        {
+            _animator.SetBool("walk", false);
+        }
     }
 
     private void FixedUpdate() {
