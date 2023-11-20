@@ -28,6 +28,12 @@ public class GameManager : MonoBehaviour
     #region UPDATE
     void Update()
     {
+
+        if (Input.GetKey("escape"))
+        {
+            SceneManager.LoadScene((int)Levels.MainMenu);
+        }
+        
         if (!_isGameOver)
         {
             tiempoRestanteParaSiguienteOleada -= Time.deltaTime;
