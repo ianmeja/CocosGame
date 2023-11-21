@@ -157,6 +157,7 @@ MonoBehaviour:
   ani: {fileID: 0}
   angle: {x: 0, y: 0, z: 0, w: 0}
   degree: 0
+  target: {fileID: 0}
 --- !u!114 &5004556341005956893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,6 +230,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TT_demo_zombie
       objectReference: {fileID: 0}
+    - target: {fileID: 856601670117699726, guid: b14953694d54eea4eb66f453e525024c, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 856601670124978856, guid: b14953694d54eea4eb66f453e525024c, type: 3}
       propertyPath: m_Controller
       value: 
@@ -279,6 +284,7 @@ MonoBehaviour:
   ani: {fileID: 8797941924777212691}
   angle: {x: 0, y: 0, z: 0, w: 0}
   degree: 0
+  target: {fileID: 0}
 --- !u!95 &8797941924777212691 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 856601670124978856, guid: b14953694d54eea4eb66f453e525024c, type: 3}
