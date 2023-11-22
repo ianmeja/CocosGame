@@ -105,4 +105,11 @@ public class Character : Actor
         EventQueueManager.instance.AddCommand(_cmdReload);
         EventsManager.instance.WeaponChange(index);
     }
+
+    void OnTriggerEnter(Collider coll){
+        if (coll.name == "TT_demo_zombie" )
+        {
+            print("Daño");
+        }
+    }
 }

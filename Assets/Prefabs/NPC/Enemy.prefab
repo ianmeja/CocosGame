@@ -119,7 +119,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 5314159284880715088}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.50468844
   m_Height: 2
   m_Direction: 1
@@ -158,6 +158,9 @@ MonoBehaviour:
   angle: {x: 0, y: 0, z: 0, w: 0}
   degree: 0
   target: {fileID: 0}
+  attack: 0
+  stuneado: 0
+  range: {fileID: 0}
 --- !u!114 &5004556341005956893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,6 +185,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8834977648167487517}
     m_Modifications:
+    - target: {fileID: 569349728935423291, guid: b14953694d54eea4eb66f453e525024c, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 856601670117272814, guid: b14953694d54eea4eb66f453e525024c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -238,8 +245,27 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 45befb0cb3362924fadca471d500194a, type: 2}
+    - target: {fileID: 3553908019362379623, guid: b14953694d54eea4eb66f453e525024c, type: 3}
+      propertyPath: ani
+      value: 
+      objectReference: {fileID: 8797941924777212691}
+    - target: {fileID: 3553908019362379623, guid: b14953694d54eea4eb66f453e525024c, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 5575673945357406290}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b14953694d54eea4eb66f453e525024c, type: 3}
+--- !u!114 &4659492495092305628 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3553908019362379623, guid: b14953694d54eea4eb66f453e525024c, type: 3}
+  m_PrefabInstance: {fileID: 8213390613397305787}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6042a81814a69cb4f93ae5ac0d20f052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8797941924767618389 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 856601670117272814, guid: b14953694d54eea4eb66f453e525024c, type: 3}
@@ -250,6 +276,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 856601670117699726, guid: b14953694d54eea4eb66f453e525024c, type: 3}
   m_PrefabInstance: {fileID: 8213390613397305787}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &896078410848841441
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8797941924767844661}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2, y: 1.5, z: 0.5}
+  m_Center: {x: 0, y: 0.8, z: 0}
 --- !u!114 &3843828334090999589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,6 +324,9 @@ MonoBehaviour:
   angle: {x: 0, y: 0, z: 0, w: 0}
   degree: 0
   target: {fileID: 0}
+  attack: 0
+  stuneado: 0
+  range: {fileID: 4659492495092305628}
 --- !u!95 &8797941924777212691 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 856601670124978856, guid: b14953694d54eea4eb66f453e525024c, type: 3}

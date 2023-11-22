@@ -13,6 +13,9 @@ public class Enemy : MonoBehaviour
 
     public GameObject target;
     public bool attack;
+    public bool stuneado;
+
+    public RangeEnemy range;
 
 
     // Start is called before the first frame update
@@ -50,17 +53,19 @@ public class Enemy : MonoBehaviour
                     break;
                 case 2:
                     transform.rotation = Quaternion.RotateTowards(transform.rotation, angle, 0.5f);
-                    transform.Translate(Vector3.forward * 0.3f * Time.deltaTime);
+                    transform.Translate(Vector3.forward * 0.1f * Time.deltaTime);
                     ani.SetBool("walk", true);
                     break;
             }
         }
         else
         {
+            var lookPos = target.transform.position - transform.position;
+            lookPos.y = 0;
+            var rotation = Quaternion.LookRotation(lookPos);
+            
             if (Vector3.Distance(transform.position, target.transform.position) > 1 && !attack){
-                var lookPos = target.transform.position - transform.position;
-                lookPos.y = 0;
-                var rotation = Quaternion.LookRotation(lookPos);
+               
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, 2);
                 ani.SetBool("walk", false);
                 ani.SetBool("run", true);
@@ -68,17 +73,22 @@ public class Enemy : MonoBehaviour
                 ani.SetBool("attack", false);
             }
             else{
-                ani.SetBool("walk", false);
-                ani.SetBool("run", false);
-                ani.SetBool("attack", true);
-                attack = true;
+                
+                if (!stuneado && !attack){
+                    transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, 2);
+
+                    ani.SetBool("walk", false);
+                    ani.SetBool("run", false);
+                }
+
             }
         }
     }
 
-    public void Final_Ani(){
+    void Final_Ani(){
         ani.SetBool("attack", false);
         attack = false;
+        range.GetComponent<CapsuleCollider>().enabled = true;
     }
 
     // Update is called once per frame
