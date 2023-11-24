@@ -106,10 +106,4 @@ public class Character : Actor
         EventsManager.instance.WeaponChange(index);
     }
 
-    void OnTriggerEnter(Collider coll){
-        if (coll.name == "TT_demo_zombie" )
-        {
-            print("Daño");
-        }
-    }
 }
