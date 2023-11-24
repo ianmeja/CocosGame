@@ -22,7 +22,7 @@ public class EventQueueManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space)) _isCharacterStuned = !_isCharacterStuned;
+        if(Input.GetKeyDown(KeyCode.P)) _isCharacterStuned = !_isCharacterStuned;
 
         while (_eventQueue.Count > 0){
 

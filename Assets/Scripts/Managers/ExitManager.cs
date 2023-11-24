@@ -18,7 +18,6 @@ public class ExitManager : MonoBehaviour
     void Update(){
         if (Input.GetKeyDown("escape"))
         {
-            // SceneManager.LoadScene((int)Levels.MainMenu);
             optionsMenu.gameObject.SetActive(!optionsMenu.gameObject.activeSelf);
         }
     }
