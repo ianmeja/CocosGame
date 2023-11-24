@@ -105,4 +105,5 @@ public class Character : Actor
         EventQueueManager.instance.AddCommand(_cmdReload);
         EventsManager.instance.WeaponChange(index);
     }
+
 }
