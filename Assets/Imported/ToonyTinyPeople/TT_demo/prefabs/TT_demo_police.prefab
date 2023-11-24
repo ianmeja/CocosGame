@@ -243,6 +243,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: d525bf9c5a97643679eac5968b16410e, type: 2}
   _life: 0
+  _owner:
+    serializedVersion: 2
+    m_Bits: 0
   _guns:
   - {fileID: 626444783}
   - {fileID: 626444783}
@@ -286,6 +289,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: d525bf9c5a97643679eac5968b16410e, type: 2}
   _life: 0
+  _owner:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &8619338778009079855
 GameObject:
   m_ObjectHideFlags: 0
