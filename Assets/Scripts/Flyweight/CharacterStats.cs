@@ -8,6 +8,7 @@ public class CharacterStats : EntitieStats
     [SerializeField] private CharacterStatsValues _characterStats;
     public float MovementSpeed => _characterStats.MovementSpeed;
     public float RotationSpeed => _characterStats.RotationSpeed;
+    //public int MaxLife => _characterStats.MaxLife;
 
 }
 [System.Serializable] 
@@ -15,4 +16,5 @@ public struct CharacterStatsValues
 {
     public float MovementSpeed;
     public float RotationSpeed;
+    //public int MaxLife;
 }

@@ -4,45 +4,48 @@ using UnityEngine;
 
 public class RangeEnemy : MonoBehaviour
 {
-    public Enemy enemy;
-    RangeEnemy range;
+    public Enemy _enemy;
+    RangeEnemy _range;
 
     void Start(){
-        range = GetComponent<RangeEnemy>();
+        _range = GetComponent<RangeEnemy>();
     }
 
     void Final_Ani(){
-        print("Entre");
-        Animator animator = enemy.GetAni();
-        if (animator != null)
+        Animator _animator = _enemy.GetAni();
+        if (_animator != null)
         {
-            animator.SetBool("attack", false);
+            _animator.SetBool("attack", false);
         }
 
-        enemy.SetAttack(false);
-        enemy.GetRange().GetComponent<CapsuleCollider>().enabled = true; 
+        _enemy.SetAttack(false);
+        _enemy.GetRange().GetComponent<CapsuleCollider>().enabled = true; 
     }
 
     void OnTriggerEnter(Collider coll){
 
-        if (!enemy.GetAttack())
+        if (!_enemy.GetAttack())
         {
-            Animator animator = enemy.GetAni();
+            Animator _animator = _enemy.GetAni();
 
             // Verifica que el objeto Animator no sea nulo antes de usarlo
-            if (animator != null)
+            if (_animator != null)
             {
                 // Llama a SetBool en el objeto Animator
-                animator.SetBool("attack", true);
-                animator.SetBool("walk", false);
-                animator.SetBool("run", false);
+                _animator.SetBool("attack", true);
+                _animator.SetBool("walk", false);
+                _animator.SetBool("run", false);
             }
-            // Realiza la lógica de ataque aquí
-            // Puedes agregar sonidos, efectos, etc.
-            // También puedes restar puntos de vida al objetivo, por ejemplo.
-            enemy.SetAttack(true);
-            print("Daño");
-            enemy.GetRange().GetComponent<CapsuleCollider>().enabled = false;
+            _enemy.SetAttack(true);
+            //print("Daño");
+            Actor _actor = coll.gameObject.GetComponent<Actor>();
+
+            if (_actor != null) {
+                // Llamada al método TakeDamage en el script Actor
+                _actor.TakeDamage(10);
+            }
+
+            _enemy.GetRange().GetComponent<CapsuleCollider>().enabled = false;
 
             // Puedes agregar un temporizador para detener la animación de ataque después de un tiempo
             Invoke("Final_Ani", 2.0f);

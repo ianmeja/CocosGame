@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 844a1567b62854772a3ddea39e0fd05d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: 8f98bd36250134c7ab41bf0363fb6fd1, type: 2}
+  stats: {fileID: 11400000, guid: d525bf9c5a97643679eac5968b16410e, type: 2}
   _life: 0
   _owner:
     serializedVersion: 2
@@ -1235,4 +1235,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6042a81814a69cb4f93ae5ac0d20f052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 5575673945357406290}
+  _enemy: {fileID: 5575673945357406290}
