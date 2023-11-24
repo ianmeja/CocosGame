@@ -16,7 +16,7 @@ public class Shotgun : Gun
         {    
             GameObject bullet = Instantiate(
                 BulletPrefab, 
-                transform.position + Random.insideUnitSphere * 1, 
+                transform.position + Random.insideUnitSphere * .3f, 
                 transform.rotation, 
                 BulletContainer);
             bullet.GetComponent<BasicBullet>().SetOwner(this);

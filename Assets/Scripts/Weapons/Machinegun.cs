@@ -16,7 +16,7 @@ public class Machinegun : Gun
         {    
             GameObject bullet = Instantiate(
                 BulletPrefab, 
-                transform.position + Vector3.forward * i * .6f, 
+                transform.position + Vector3.forward * i * .2f, 
                 transform.rotation, 
                 BulletContainer);
             bullet.GetComponent<BasicBullet>().SetOwner(this);
