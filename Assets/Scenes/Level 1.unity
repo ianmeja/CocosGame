@@ -14106,6 +14106,10 @@ PrefabInstance:
       value: 112
       objectReference: {fileID: 0}
     - target: {fileID: 1097008324, guid: 47a3741b253f088469eedd6d403dd89a, type: 3}
+      propertyPath: stats
+      value: 
+      objectReference: {fileID: 11400000, guid: d525bf9c5a97643679eac5968b16410e, type: 2}
+    - target: {fileID: 1097008324, guid: 47a3741b253f088469eedd6d403dd89a, type: 3}
       propertyPath: _attack
       value: 32
       objectReference: {fileID: 0}

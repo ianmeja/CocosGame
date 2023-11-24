@@ -11,8 +11,8 @@ public class Actor : MonoBehaviour, IDamageable
 
     #region PRIVATE_PROPERTIES
     
-    public EntitieStats Stats => stats;
-    [SerializeField] protected EntitieStats stats;
+    public CharacterStats Stats => stats;
+    [SerializeField] protected CharacterStats stats;
     [SerializeField] private int _life; //currentLife
     [SerializeField] private LayerMask _owner;
     #endregion
@@ -32,6 +32,7 @@ public class Actor : MonoBehaviour, IDamageable
         _life -= damage; 
         if (name.Equals("TT_demo_police"))
         {
+            _life -= damage;
             EventsManager.instance.CharacterLifeChange(Life,MaxLife);
         }
 

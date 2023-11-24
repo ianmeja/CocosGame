@@ -14,3 +14,4 @@ public struct EntityStatsValues
 {
     public int MaxLife;
 }
+
