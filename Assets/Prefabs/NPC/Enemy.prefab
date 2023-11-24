@@ -157,7 +157,7 @@ MonoBehaviour:
   _target: {fileID: 0}
   _attack: 0
   _range: {fileID: 0}
-  _enemy: {fileID: 0}
+  _enemy: {fileID: 7308541424441571765}
 --- !u!114 &5004556341005956893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,6 +254,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b14953694d54eea4eb66f453e525024c, type: 3}
+--- !u!195 &7308541424441571765 stripped
+NavMeshAgent:
+  m_CorrespondingSourceObject: {fileID: 1483642005623128078, guid: b14953694d54eea4eb66f453e525024c, type: 3}
+  m_PrefabInstance: {fileID: 8213390613397305787}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8797941924767618389 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 856601670117272814, guid: b14953694d54eea4eb66f453e525024c, type: 3}
