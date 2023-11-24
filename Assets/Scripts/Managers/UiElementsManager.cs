@@ -13,6 +13,7 @@ public class UiElementsManager : MonoBehaviour
         EventsManager.instance.OnWeaponChange += OnWeaponChange;
         EventsManager.instance.OnBulletCountChange += OnBulletCountChange;
         EventsManager.instance.OnAvatarChange += OnAvatarChange;
+        EventsManager.instance.OnLevelChange += OnLevelChange;
 
         StartCoroutine(ContadorTotal());
     }
@@ -71,24 +72,32 @@ public class UiElementsManager : MonoBehaviour
 
     #region TIEMPO_UI_LOGIC
     [SerializeField] private Text _tiempoRestanteText;
-    private float _tiempoTotal = 120f; // 2 minutos en segundos
+    [SerializeField] private float _tiempoTotal = 120f;
 
     private IEnumerator ContadorTotal()
     {
         while (_tiempoTotal > 0)
         {
-            int minutos = Mathf.FloorToInt(_tiempoTotal / 60);
-            int segundos = Mathf.FloorToInt(_tiempoTotal % 60);
-            segundos = Mathf.Clamp(segundos, 0, 59);
-
             if(_tiempoTotal < 120f){
-                _tiempoRestanteText.text = string.Format("{0}:{1:00}", minutos, segundos);
+                int minutes = Mathf.FloorToInt(_tiempoTotal / 60F);
+                int seconds = Mathf.FloorToInt(_tiempoTotal - minutes * 60);
+
+                _tiempoRestanteText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
             }
             yield return null;
             _tiempoTotal -= Time.deltaTime;
         }
-
         _tiempoRestanteText.text = "¡Fin!";
+        EventsManager.instance.EventNewLevel();
+    }
+    #endregion
+
+    #region NEXT_LEVEL_UI_LOGIC
+    [SerializeField] private Text _endOfLevel;
+
+    private void OnLevelChange()
+    {
+        _endOfLevel.text = "Dirigete hacia la puerta mágica!";
     }
     #endregion
 }

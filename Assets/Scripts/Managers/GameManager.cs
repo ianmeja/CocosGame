@@ -4,70 +4,63 @@ using UnityEngine;
 using UnityEngine.UI;
 using static Enums;
 using UnityEngine.SceneManagement;
+using System;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private bool _isGameOver = false;
-    [SerializeField] private bool _isVictory = false;
-    [SerializeField] private Text _gameOverMessage;
-    [SerializeField] private SpawnEnemyBox _spawnCaja; // Asigna tu caja de spawn en el Inspector
-    public float tiempoHastaSiguienteOleada = 30f;
-    public int totalOleadas = 4; // Ajusta esto al número total de oleadas que desees
-    private int oleadasActivadas = 0;
-    private float tiempoRestanteParaSiguienteOleada;
-
     #region UNITY_EVENTS
     void Start()
     {
         EventsManager.instance.OnGameOver += OnGameOver;
+        EventsManager.instance.OnLevelChange += OnLevelChange;
+
         _gameOverMessage.text = string.Empty;
-        tiempoRestanteParaSiguienteOleada = tiempoHastaSiguienteOleada;
+        _oleadasActivadas = 0;
+        _nextLevelFlag = false;
+        _tiempoRestanteParaSiguienteOleada = _tiempoHastaSiguienteOleada;
     }
     #endregion
 
     #region UPDATE
+    [SerializeField] private float _tiempoHastaSiguienteOleada = 30f;
+    private int _oleadasActivadas;
+    private float _tiempoRestanteParaSiguienteOleada;
     void Update()
     {
-
+        //ACA HABRIA Q PONER UN MENU QUE NO ARRANQUE TODO DE CERO O ALGUN "SEGURO QUIERE SALIR?" ALGO ASI
         if (Input.GetKey("escape"))
         {
             SceneManager.LoadScene((int)Levels.MainMenu);
         }
-        
-        if (!_isGameOver)
-        {
-            tiempoRestanteParaSiguienteOleada -= Time.deltaTime;
 
-            if (tiempoRestanteParaSiguienteOleada <= 0f)
+        if (!_isGameOver & !_nextLevelFlag)
+        {
+            _tiempoRestanteParaSiguienteOleada -= Time.deltaTime;
+
+            if (_tiempoRestanteParaSiguienteOleada <= 0f)
             {
-                OnOleadaActivada();
-                tiempoRestanteParaSiguienteOleada = tiempoHastaSiguienteOleada;
+                _tiempoRestanteParaSiguienteOleada = _tiempoHastaSiguienteOleada;
+                _oleadasActivadas += 1;
+                Debug.Log(string.Format("Oleada nº{0}", _oleadasActivadas));
+                EventsManager.instance.EventOleada(_oleadasActivadas);
             }
         }
     }
     #endregion
 
-    #region ACTIONS
-    private void OnOleadaActivada()
+    #region GAME_LEVELS
+    private bool _nextLevelFlag;
+
+    private void OnLevelChange()
     {
-        Debug.Log("¡Oleada de zombies activada!");
-        EventsManager.instance.EventOleada();
-
-        // Llama a la función de generación de zombies en la caja
-        if (_spawnCaja != null)
-        {
-            Debug.Log("Spawnear zombie");
-            _spawnCaja.GenerarZombiesEnCaja();
-        }
-
-        oleadasActivadas++;
-
-        if (oleadasActivadas >= totalOleadas)
-        {
-            OnGameOver(true);
-        }
+        _nextLevelFlag = true;
     }
+    #endregion
 
+    #region GAME_OVER
+    [SerializeField] private bool _isGameOver = false;
+    [SerializeField] private bool _isVictory = false;
+    [SerializeField] private Text _gameOverMessage;
     private void OnGameOver(bool isVictory)
     {
         _isGameOver = true;

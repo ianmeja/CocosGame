@@ -51,5 +51,7 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "CocosGame.sln"
+    "dotnet.defaultSolution": "CocosGame.sln",
+    "dotnet.preferCSharpExtension": true,
+    "DockerRun.DisableAutoGenerateConfig": true
 }

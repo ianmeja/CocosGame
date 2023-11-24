@@ -22,10 +22,16 @@ public class EventsManager : MonoBehaviour
     {
         if (OnGameOver != null) OnGameOver(isVictory);
     }
-    public event Action OnOleadaActivada;
-    public void EventOleada()
+    public event Action<int> OnOleadaActivada;
+    public void EventOleada(int oleada)
     {
-        if (OnOleadaActivada != null) OnOleadaActivada();
+        if (OnOleadaActivada != null) OnOleadaActivada(oleada);
+    }
+    public event Action OnLevelChange;
+    public void EventNewLevel()
+    {
+        Debug.Log("New Level Achieved!");
+        if (OnLevelChange != null) OnLevelChange();
     }
     #endregion
 

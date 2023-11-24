@@ -41,10 +41,8 @@ public class SoundManager : MonoBehaviour
     {
         _audioSource.PlayOneShot(isVictory ? _victory : _defeat);
     }
-    private void OnOleadaActivada()
+    private void OnOleadaActivada(int oleada)
     {
-        Debug.Log("Sonido de oleada activado");
-        // Llamar al método PlayOnShot al activar una oleada
         _audioSource.PlayOneShot(_wave);
     }
     
