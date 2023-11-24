@@ -54,10 +54,6 @@ public class Character : Actor
         if(Input.GetKeyDown(_GunSlot1)) SwitchGuns(Weapon.Pistol);
         if(Input.GetKeyDown(_GunSlot2)) SwitchGuns(Weapon.Machinegun);
         if(Input.GetKeyDown(_GunSlot3)) SwitchGuns(Weapon.Shotgun);
-
-        //GameOver conditions
-        if(Input.GetKeyDown(KeyCode.Return)) EventsManager.instance.EventGameOver(true);
-        if(Input.GetKeyDown(KeyCode.Backspace)) TakeDamage(7);
     
         if (Input.GetKey(_moveForward) || Input.GetKey(_moveBack) || Input.GetKey(_moveLeft) || Input.GetKey(_moveRight))
         {
