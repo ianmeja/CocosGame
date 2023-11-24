@@ -15,5 +15,5 @@ MonoBehaviour:
   _stats:
     MaxLife: 100
   _characterStats:
-    MovementSpeed: 5
+    MovementSpeed: 8
     RotationSpeed: 60
