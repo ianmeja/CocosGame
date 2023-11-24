@@ -3274,7 +3274,7 @@ GameObject:
   - component: {fileID: 196054257}
   m_Layer: 0
   m_Name: vertical street (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5259,7 +5259,7 @@ GameObject:
   - component: {fileID: 327865128}
   m_Layer: 0
   m_Name: vertical street (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5995,7 +5995,7 @@ GameObject:
   - component: {fileID: 367476119}
   m_Layer: 0
   m_Name: horizontal street (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6909,7 +6909,7 @@ GameObject:
   - component: {fileID: 425767868}
   m_Layer: 0
   m_Name: horizontal street
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9400,7 +9400,7 @@ GameObject:
   - component: {fileID: 582363274}
   m_Layer: 0
   m_Name: vertical street
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14573,7 +14573,7 @@ GameObject:
   - component: {fileID: 919726285}
   m_Layer: 0
   m_Name: vertical street (6)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24810,7 +24810,7 @@ GameObject:
   - component: {fileID: 1643059563}
   m_Layer: 0
   m_Name: vertical street (5)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27053,7 +27053,7 @@ GameObject:
   - component: {fileID: 1867515584}
   m_Layer: 0
   m_Name: vertical street (4)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28131,7 +28131,7 @@ GameObject:
   - component: {fileID: 1920152661}
   m_Layer: 0
   m_Name: vertical street (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30065,7 +30065,7 @@ GameObject:
   - component: {fileID: 2032972984}
   m_Layer: 0
   m_Name: horizontal street (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
