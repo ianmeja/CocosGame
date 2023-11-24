@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour, IDamageable
 {
     private Animator _ani;
     private GameObject _target;
-    [SerializeField] private NavMeshAgent _enemy;
+    private NavMeshAgent _enemy;
 
     #region IDAMAGEABLE_PROPERTIES
     public EnemyStats Stats => stats;
@@ -29,27 +29,19 @@ public class Enemy : MonoBehaviour, IDamageable
         _ani = GetComponent<Animator>();
         _enemy = GetComponent<NavMeshAgent>();
         _target = GameObject.Find("TT_demo_police");
-        EventsManager.instance.OnZombieAttack += OnZombieAttack;
         _ani.SetBool("walk", true);
-    }
-
-    private void OnZombieAttack(Collider other)
-    {
-        _ani.SetBool("attack", true);
-        _ani.SetBool("walk", false);
-        other.gameObject.GetComponent<Actor>().TakeDamage(Damage);
-        Invoke("EndAnimation", 2f);
-    }
-
-    private void EndAnimation(){
-        _ani.SetBool("attack", false);
-        _ani.SetBool("walk", true);
+        EventsManager.instance.OnLevelChange += Die;
     }
 
     // Update is called once per frame
     void Update()
     {
-        _enemy.SetDestination(_target.transform.position);
+        if(_target != null){
+            _enemy.SetDestination(_target.transform.position);
+        }
+        else{
+            _target = GameObject.Find("TT_demo_police");
+        }
     }
 
     #region IDAMAGEABLE_METHODS
@@ -62,7 +54,15 @@ public class Enemy : MonoBehaviour, IDamageable
 
     public void Die()
     {
+        _ani.SetBool("walk", false);
+        _ani.SetBool("attack", false);
+        _ani.SetBool("die", true);
+
+        EventsManager.instance.ZombieDie();
         Debug.Log($"{name} Died!!!!");
+        Invoke("ZDestroy", 5f);
+    }
+    private void ZDestroy(){
         Destroy(gameObject);
     }
     #endregion

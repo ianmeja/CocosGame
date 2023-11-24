@@ -74,9 +74,9 @@ public class EventsManager : MonoBehaviour
     public void ZombieDie(){
         if(OnZombieDie != null) OnZombieDie();
     }
-    public event Action<Collider> OnZombieAttack;
-    public void ZombieAttack(Collider other){
-        if(OnZombieAttack != null) OnZombieAttack(other);
+    public event Action OnZombieAttack;
+    public void ZombieAttack(){
+        if(OnZombieAttack != null) OnZombieAttack();
     }
     #endregion
 }
