@@ -47,7 +47,7 @@ public class BasicBullet : MonoBehaviour, IBullet
                     new CmdApplyDamage(other.GetComponent<IDamageable>(),_owner.Damage));
             }
         }
-        if(!other.CompareTag("Player")){
+        if(!other.CompareTag("Player") && !other.CompareTag("Bullet")){
             //Debug.Log("la bala murio");
             Die();
         }
