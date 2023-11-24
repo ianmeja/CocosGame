@@ -37,10 +37,6 @@ public class BasicBullet : MonoBehaviour, IBullet
         _lifetime -= Time.deltaTime;
         if(_lifetime <= 0) Die(); 
     }
-    private void OnDestroy() 
-    {
-        // Debug.Log("Bullet has died!!!");
-    }
     private void OnTriggerEnter(Collider other)
     {
         if(((1<<other.gameObject.layer) & _hittableMask)!= 0)
@@ -51,7 +47,10 @@ public class BasicBullet : MonoBehaviour, IBullet
                     new CmdApplyDamage(other.GetComponent<IDamageable>(),_owner.Damage));
             }
         }
-        // Die(); ARREGLAR ESTO PARA QUE NO CHOQUE CONTRA EL POLICIA
+        if(!other.CompareTag("Player")){
+            //Debug.Log("la bala murio");
+            Die();
+        }
     }
     #endregion
 

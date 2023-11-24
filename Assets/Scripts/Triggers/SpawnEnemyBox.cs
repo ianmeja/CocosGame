@@ -33,7 +33,7 @@ public class SpawnEnemyBox : MonoBehaviour
     // Función para activar la generación de zombies
     private IEnumerator GenerarZombiesEnCaja(int oleada)
     {
-        for (int i = 0; i < 2*oleada & !_nextLevel; i++)
+        for (int i = 0; i < oleada & !_nextLevel; i++)
         {
             GameObject clone = Instantiate(
                 _enemyPrefab,
@@ -41,7 +41,7 @@ public class SpawnEnemyBox : MonoBehaviour
                 Quaternion.Euler(0, Random.Range(0,360), 0)
             );
             if (clone != null)  _zombies.Add(clone);
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(2);
         }
     }
 }

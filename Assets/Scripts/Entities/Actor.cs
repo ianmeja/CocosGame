@@ -29,12 +29,8 @@ public class Actor : MonoBehaviour, IDamageable
     #region IDAMAGEABLE_METHODS
     public void TakeDamage(int damage)
     {
-        _life -= damage; 
-        if (name.Equals("TT_demo_police"))
-        {
-            _life -= damage;
-            EventsManager.instance.CharacterLifeChange(Life,MaxLife);
-        }
+        _life -= damage;
+        EventsManager.instance.CharacterLifeChange(Life,MaxLife);
 
         if(_life < (MaxLife * 0.25f))
         {
@@ -47,9 +43,8 @@ public class Actor : MonoBehaviour, IDamageable
     public void Die()
     {
         Debug.Log($"{name} Died!!!!");
-        
-        if(name.Equals("TT_demo_police")) EventsManager.instance.EventGameOver(false);
-        else Destroy(gameObject);
+        EventsManager.instance.EventGameOver(false);
+        Destroy(gameObject);
     }
     #endregion
 }

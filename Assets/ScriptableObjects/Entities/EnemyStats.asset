@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3054f829b4f804888bb4f23ef2d684e0, type: 3}
-  m_Name: WindowStats
+  m_Script: {fileID: 11500000, guid: 0a489bddde0694bab95b45e84b5ae11a, type: 3}
+  m_Name: EnemyStats
   m_EditorClassIdentifier: 
   _stats:
     MaxLife: 20
+  _EnemyStats:
+    Damage: 5

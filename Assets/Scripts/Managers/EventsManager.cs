@@ -44,7 +44,7 @@ public class EventsManager : MonoBehaviour
         if(OnCharacterLifeChange != null) OnCharacterLifeChange(currentLife, maxLife);
     }
     
-    // WEAPONS 
+    // WEAPONS & BULLETS
     public event Action<Weapon> OnWeaponChange;
     public event Action<int,int> OnBulletCountChange;
 
@@ -66,6 +66,17 @@ public class EventsManager : MonoBehaviour
     {
         if (OnAvatarChange !=null) OnAvatarChange(id);
 
+    }
+    #endregion
+
+    #region ZOMBIE
+    public event Action OnZombieDie;
+    public void ZombieDie(){
+        if(OnZombieDie != null) OnZombieDie();
+    }
+    public event Action<Collider> OnZombieAttack;
+    public void ZombieAttack(Collider other){
+        if(OnZombieAttack != null) OnZombieAttack(other);
     }
     #endregion
 }
