@@ -27,11 +27,6 @@ public class GameManager : MonoBehaviour
     private float _tiempoRestanteParaSiguienteOleada;
     void Update()
     {
-        //ACA HABRIA Q PONER UN MENU QUE NO ARRANQUE TODO DE CERO O ALGUN "SEGURO QUIERE SALIR?" ALGO ASI
-        if (Input.GetKey("escape"))
-        {
-            SceneManager.LoadScene((int)Levels.MainMenu);
-        }
 
         if (!_isGameOver & !_nextLevelFlag)
         {

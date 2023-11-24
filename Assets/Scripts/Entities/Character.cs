@@ -21,7 +21,7 @@ public class Character : Actor
     [SerializeField] private KeyCode _moveRight = KeyCode.D;
     
 
-    [SerializeField] private KeyCode _attack = KeyCode.Mouse0;
+    [SerializeField] private KeyCode _attack = KeyCode.Space;
     [SerializeField] private KeyCode _reload = KeyCode.R;
 
     [SerializeField] private KeyCode _GunSlot1 = KeyCode.Alpha1;
