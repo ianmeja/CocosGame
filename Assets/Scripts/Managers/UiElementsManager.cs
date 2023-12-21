@@ -24,7 +24,7 @@ public class UiElementsManager : MonoBehaviour
     [SerializeField] private Text _lifePercent;
     [SerializeField] private float _lifePercentValue = 1f;
 
-    private void OnCharacterLifeChange(int currentLife, int maxLife)
+    private void OnCharacterLifeChange(int currentLife, int maxLife, int sound)
     {
         _lifePercentValue = (float)currentLife / (float)maxLife;
         Color color = _lifePercentValue < .1f ? Color.red

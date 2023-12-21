@@ -12,6 +12,8 @@ public class ZombieAttack : MonoBehaviour
     private Animator _ani;
     public EnemyStats Stats => stats;
     [SerializeField] protected EnemyStats stats;
+    [SerializeField] protected Enemy enemy;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,8 @@ public class ZombieAttack : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other){
+        if(enemy._dead) return;
+
         if(other.CompareTag("Player")){
             _col.enabled = false;
 

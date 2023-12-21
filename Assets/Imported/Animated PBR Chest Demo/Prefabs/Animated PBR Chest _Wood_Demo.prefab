@@ -127,6 +127,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6200720779110778461}
   - component: {fileID: 6200720779120667069}
+  - component: {fileID: 5858288150027976728}
+  - component: {fileID: 7624116109543764448}
   m_Layer: 0
   m_Name: Animated PBR Chest _Wood_Demo
   m_TagString: Untagged
@@ -161,8 +163,8 @@ Animator:
   m_GameObject: {fileID: 6200720779111275133}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 1cc6cc20abc7a464a9dec49ee02361cf, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
+  m_Controller: {fileID: 9100000, guid: 1a6aac9e874e17646831952da99205e3, type: 2}
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -172,6 +174,33 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &5858288150027976728
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6200720779111275133}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.7686133, y: 3.4084706, z: 6.446458}
+  m_Center: {x: 0.05232334, y: 1.2042353, z: 2.7232287}
+--- !u!114 &7624116109543764448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6200720779111275133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67ea0cfaeec1e43728236ed4be850184, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _openChestParameter: 0
+  _healthPrefab: {fileID: 1000013846074356, guid: 11e31a2ebb4e6e246bcf8c0ba034a031, type: 3}
 --- !u!1001 &7577812831630561782
 PrefabInstance:
   m_ObjectHideFlags: 0

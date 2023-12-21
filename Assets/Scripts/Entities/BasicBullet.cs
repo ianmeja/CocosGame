@@ -14,12 +14,11 @@ public class BasicBullet : MonoBehaviour, IBullet
     #endregion
 
     #region PRIVATE_PROPERTIES
-    [SerializeField] private float _speed = 100f;
+    [SerializeField] private float _speed = 150f;
     [SerializeField] private float _lifetime = 3f;
     private Collider _collider;
     private Rigidbody _rigidbody;
     IGun _owner;
-    [SerializeField] private LayerMask _hittableMask;
     #endregion
 
     #region UNITY_EVENTS
@@ -39,7 +38,7 @@ public class BasicBullet : MonoBehaviour, IBullet
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(((1<<other.gameObject.layer) & _hittableMask)!= 0)
+        if(other.CompareTag("Enemy"))
         {        
             if(other.GetComponent<IDamageable>() != null)
             {

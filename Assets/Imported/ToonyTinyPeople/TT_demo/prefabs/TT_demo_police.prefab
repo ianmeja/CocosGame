@@ -144,7 +144,6 @@ GameObject:
   - component: {fileID: 1097008327}
   - component: {fileID: 1097008323}
   - component: {fileID: 1097008324}
-  - component: {fileID: 1097008321}
   - component: {fileID: 1097008322}
   m_Layer: 6
   m_Name: TT_demo_police
@@ -246,6 +245,8 @@ MonoBehaviour:
   _owner:
     serializedVersion: 2
     m_Bits: 0
+  _inmortal: 0
+  _tiempoInmortal: 1
   _guns:
   - {fileID: 626444783}
   - {fileID: 626444783}
@@ -261,20 +262,6 @@ MonoBehaviour:
   _GunSlot1: 49
   _GunSlot2: 50
   _GunSlot3: 51
---- !u!114 &1097008321
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8619338778009079851}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cce28ce19e3d643108c0e7eb0c2f1d8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _movementSpeed: 15
-  _rotationSpeed: 500
 --- !u!114 &1097008322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,6 +279,8 @@ MonoBehaviour:
   _owner:
     serializedVersion: 2
     m_Bits: 0
+  _inmortal: 0
+  _tiempoInmortal: 1
 --- !u!1 &8619338778009079855
 GameObject:
   m_ObjectHideFlags: 0

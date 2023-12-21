@@ -32,7 +32,7 @@ public class Character : Actor
     #endregion
 
     #region UNITY_EVENTS
-    void Start()
+    new void Start()
     {
         base.stats = _characterStats;
         base.Start();

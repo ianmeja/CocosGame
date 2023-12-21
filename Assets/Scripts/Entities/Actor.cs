@@ -14,14 +14,15 @@ public class Actor : MonoBehaviour, IDamageable
     public CharacterStats Stats => stats;
     [SerializeField] protected CharacterStats stats;
     [SerializeField] private int _life; //currentLife
-    [SerializeField] private LayerMask _owner;
+    public bool _inmortal = false;
+    public float _tiempoInmortal = 1.0f;
     #endregion
 
     #region UNITY_EVENTS
     protected void Start() 
     {
         _life = MaxLife;
-        EventsManager.instance.CharacterLifeChange(Life,MaxLife);
+        EventsManager.instance.CharacterLifeChange(Life,MaxLife,0);
         EventsManager.instance.AvatarChange(Enums.AvatarFace.NormalFace);
     }
     #endregion
@@ -29,8 +30,10 @@ public class Actor : MonoBehaviour, IDamageable
     #region IDAMAGEABLE_METHODS
     public void TakeDamage(int damage)
     {
+        if(_inmortal) return;
+
         _life -= damage;
-        EventsManager.instance.CharacterLifeChange(Life,MaxLife);
+        EventsManager.instance.CharacterLifeChange(Life,MaxLife,1);
 
         if(_life < (MaxLife * 0.25f))
         {
@@ -39,6 +42,8 @@ public class Actor : MonoBehaviour, IDamageable
 
         Debug.Log($"{name} Hit -> Life {_life}!");
         if(_life <= 0) Die();
+
+        StartCoroutine(TiempoInmortal());
     }
     public void Die()
     {
@@ -47,4 +52,17 @@ public class Actor : MonoBehaviour, IDamageable
         Destroy(gameObject);
     }
     #endregion
+
+    public void GainHealth(int health){
+        _life += health;
+        if(_life > MaxLife)
+            _life = MaxLife;
+        EventsManager.instance.CharacterLifeChange(Life,MaxLife,2);
+    }
+
+    IEnumerator TiempoInmortal(){
+        _inmortal = true;
+        yield return new WaitForSeconds(_tiempoInmortal);
+        _inmortal = false;
+    }
 }

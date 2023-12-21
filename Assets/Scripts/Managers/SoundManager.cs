@@ -8,6 +8,8 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip _victory;
     [SerializeField] private AudioClip _defeat;
     [SerializeField] private AudioClip _wave;
+    [SerializeField] private AudioClip _health;
+    [SerializeField] private AudioClip _damage;
 
     [SerializeField] Image soundOnIcon;
     [SerializeField] Image soundOffIcon;
@@ -21,6 +23,7 @@ public class SoundManager : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
         EventsManager.instance.OnGameOver += OnGameOver;
         EventsManager.instance.OnOleadaActivada += OnOleadaActivada;
+        EventsManager.instance.OnCharacterLifeChange += OnCharacterLifeChange;
 
         if(!PlayerPrefs.HasKey("muted"))
         {
@@ -44,6 +47,17 @@ public class SoundManager : MonoBehaviour
     private void OnOleadaActivada(int oleada)
     {
         _audioSource.PlayOneShot(_wave);
+    }
+    private void OnHealthConsume()
+    {
+        _audioSource.PlayOneShot(_health);
+    }
+    private void OnCharacterLifeChange(int currentLife, int maxLife, int sound){
+        if(sound == 1){
+            _audioSource.PlayOneShot(_damage);
+        }else if(sound ==2){
+            _audioSource.PlayOneShot(_health);
+        }
     }
     
     private void UpdateButtonIcon()

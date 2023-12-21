@@ -14,6 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gunStats:
     BulletPrefab: {fileID: 1979055902509744744, guid: dcbcf8eadc8f341c89a9e949bda541b5, type: 3}
-    BulletContainer: {fileID: 6418221578882909833, guid: d5ba592c4b6f445ac81908f066d87225, type: 3}
-    Damage: 12
+    Damage: 15
     AmmoCapacity: 7

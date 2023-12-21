@@ -37,13 +37,12 @@ public class EventsManager : MonoBehaviour
 
     #region UI_ELEMENTS_Update
     // LIFE BAR
-    public event Action<int,int> OnCharacterLifeChange;
+    public event Action<int,int,int> OnCharacterLifeChange;
 
-    public void CharacterLifeChange(int currentLife, int maxLife)
+    public void CharacterLifeChange(int currentLife, int maxLife, int sound)
     {
-        if(OnCharacterLifeChange != null) OnCharacterLifeChange(currentLife, maxLife);
+        if(OnCharacterLifeChange != null) OnCharacterLifeChange(currentLife, maxLife, sound);
     }
-    
     // WEAPONS & BULLETS
     public event Action<Weapon> OnWeaponChange;
     public event Action<int,int> OnBulletCountChange;
