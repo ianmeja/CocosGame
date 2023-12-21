@@ -9,18 +9,17 @@ public class NextLevel : MonoBehaviour
     void Start(){
         _col = gameObject.GetComponent<BoxCollider>();
         _col.enabled = false;
-        EventsManager.instance.OnLevelChange += OnLevelChange;
+        EventsManager.instance.OnGetKey += OnGetKey;
     }
 
-    private void OnLevelChange(){
+    private void OnGetKey(){
         _col.enabled = true;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")) // Asegurate de que el jugador tenga un tag "Player" asignado.
+        if (other.CompareTag("Player"))
         {
-            // Carga la escena de "End Game" al encontrar la puerta.
             SceneManager.LoadScene((int)Levels.Level_2);
         }
     }

@@ -93,11 +93,11 @@ public class UiElementsManager : MonoBehaviour
     #endregion
 
     #region NEXT_LEVEL_UI_LOGIC
-    [SerializeField] private Text _endOfLevel;
+    [SerializeField] private Text _hintText;
 
     private void OnLevelChange()
     {
-        _endOfLevel.text = "Dirigete hacia la puerta mágica!";
+        _hintText.text = "Encuentra la llave";
     }
     #endregion
 }

@@ -200,7 +200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _openChestParameter: 0
-  _healthPrefab: {fileID: 1000013846074356, guid: 11e31a2ebb4e6e246bcf8c0ba034a031, type: 3}
+  _consumiblePrefab: {fileID: 1000013846074356, guid: 11e31a2ebb4e6e246bcf8c0ba034a031, type: 3}
 --- !u!1001 &7577812831630561782
 PrefabInstance:
   m_ObjectHideFlags: 0

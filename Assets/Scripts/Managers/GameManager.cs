@@ -45,10 +45,16 @@ public class GameManager : MonoBehaviour
 
     #region GAME_LEVELS
     private bool _nextLevelFlag;
-
+    //[SerializeField] private GameObject _chestPrefab;
+    //[SerializeField] private GameObject _finalChest;
     private void OnLevelChange()
     {
         _nextLevelFlag = true;
+        // GameObject finalChest = Instantiate(
+        //     _chestPrefab, 
+        //     _finalChest.transform.position, 
+        //     _finalChest.transform.rotation
+        // );
     }
     #endregion
 

@@ -17,7 +17,7 @@ public class DoorAnimationController : MonoBehaviour
         _closedDoorParameter = false;
         _col.enabled = false;
 
-        EventsManager.instance.OnLevelChange += OnLevelChange;
+        EventsManager.instance.OnGetKey += OnGetKey;
     }
 
     private void OnTriggerEnter(Collider other) 
@@ -30,9 +30,9 @@ public class DoorAnimationController : MonoBehaviour
         SetParameterFlags(false);
     }
 
-    private void OnLevelChange() 
+    private void OnGetKey() 
     {
-        Debug.Log("Now the door should be open");
+        Debug.Log("Now the door should open!");
         _col.enabled = true;
     }
 

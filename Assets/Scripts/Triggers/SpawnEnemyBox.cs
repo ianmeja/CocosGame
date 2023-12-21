@@ -14,7 +14,7 @@ public class SpawnEnemyBox : MonoBehaviour
 
     private void OnOleadaActivada(int oleada)
     {
-        if(!_nextLevel) StartCoroutine(GenerarZombiesEnCaja(oleada));
+        if(!_nextLevel && transform.position.y < 1) StartCoroutine(GenerarZombiesEnCaja(oleada));
     }
 
     // Función para activar la generación de zombies

@@ -15,4 +15,4 @@ MonoBehaviour:
   _gunStats:
     BulletPrefab: {fileID: 1979055902509744744, guid: dcbcf8eadc8f341c89a9e949bda541b5, type: 3}
     Damage: 15
-    AmmoCapacity: 7
+    AmmoCapacity: 5

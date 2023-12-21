@@ -6,7 +6,7 @@ public class ChestAnimationController : MonoBehaviour
 {
     private Animator _animator;
     [SerializeField] private bool _openChestParameter;
-    [SerializeField] private GameObject _healthPrefab;
+    [SerializeField] private GameObject _consumiblePrefab;
 
     private void Start()
     {
@@ -19,14 +19,14 @@ public class ChestAnimationController : MonoBehaviour
         if(_openChestParameter) return;
         if(other.CompareTag("Player")){
             SetParameterFlags(true);
-            Invoke("InstanciateConsumable", 2.5f);
+            Invoke("InstanciateConsumable", 1.5f);
         }
     }
 
     private void InstanciateConsumable(){
         GameObject clone = Instantiate(
-                _healthPrefab,
-                transform.position + transform.forward * 2, Quaternion.identity
+                _consumiblePrefab,
+                transform.position + transform.forward * 2 + transform.up, transform.rotation
         );
     }
 

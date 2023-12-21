@@ -10,6 +10,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip _wave;
     [SerializeField] private AudioClip _health;
     [SerializeField] private AudioClip _damage;
+    [SerializeField] private AudioClip _key;
 
     [SerializeField] Image soundOnIcon;
     [SerializeField] Image soundOffIcon;
@@ -24,6 +25,7 @@ public class SoundManager : MonoBehaviour
         EventsManager.instance.OnGameOver += OnGameOver;
         EventsManager.instance.OnOleadaActivada += OnOleadaActivada;
         EventsManager.instance.OnCharacterLifeChange += OnCharacterLifeChange;
+        EventsManager.instance.OnGetKey += OnGetKey;
 
         if(!PlayerPrefs.HasKey("muted"))
         {
@@ -48,9 +50,9 @@ public class SoundManager : MonoBehaviour
     {
         _audioSource.PlayOneShot(_wave);
     }
-    private void OnHealthConsume()
+    private void OnGetKey()
     {
-        _audioSource.PlayOneShot(_health);
+        _audioSource.PlayOneShot(_key);
     }
     private void OnCharacterLifeChange(int currentLife, int maxLife, int sound){
         if(sound == 1){

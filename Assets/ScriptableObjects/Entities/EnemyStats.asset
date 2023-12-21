@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: EnemyStats
   m_EditorClassIdentifier: 
   _stats:
-    MaxLife: 20
+    MaxLife: 10
   _EnemyStats:
     Damage: 5

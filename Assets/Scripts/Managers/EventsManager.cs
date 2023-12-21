@@ -33,6 +33,12 @@ public class EventsManager : MonoBehaviour
         Debug.Log("New Level Achieved!");
         if (OnLevelChange != null) OnLevelChange();
     }
+    public event Action OnGetKey;
+    public void EventGetKey()
+    {
+        Debug.Log("Key collected!");
+        if (OnGetKey != null) OnGetKey();
+    }
     #endregion
 
     #region UI_ELEMENTS_Update
