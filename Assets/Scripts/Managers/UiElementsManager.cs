@@ -14,6 +14,7 @@ public class UiElementsManager : MonoBehaviour
         EventsManager.instance.OnBulletCountChange += OnBulletCountChange;
         EventsManager.instance.OnAvatarChange += OnAvatarChange;
         EventsManager.instance.OnLevelChange += OnLevelChange;
+        EventsManager.instance.OnGetKey += OnGetKey;
 
         StartCoroutine(ContadorTotal());
     }
@@ -46,7 +47,7 @@ public class UiElementsManager : MonoBehaviour
 
     // 0 -> Pistol 1 -> Machinegun 2 -> Shotgun
     private void OnWeaponChange(Weapon id) => _weapon.sprite = _weaponSprites[(int)id];
-    private void OnBulletCountChange(int bulletCount, int maxBullet) => _bulletInformation.text = $"{bulletCount} de {maxBullet}";
+    private void OnBulletCountChange(int bulletCount, int maxBullet) => _bulletInformation.text = $"{bulletCount} of {maxBullet}";
     #endregion
 
     #region AVATAR_UI_LOGIC
@@ -87,7 +88,7 @@ public class UiElementsManager : MonoBehaviour
             yield return null;
             _tiempoTotal -= Time.deltaTime;
         }
-        _tiempoRestanteText.text = "¡Fin!";
+        _tiempoRestanteText.text = "The end";
         EventsManager.instance.EventNewLevel();
     }
     #endregion
@@ -97,7 +98,11 @@ public class UiElementsManager : MonoBehaviour
 
     private void OnLevelChange()
     {
-        _hintText.text = "Encuentra la llave";
+        _hintText.text = "Find the key";
+    }
+    private void OnGetKey()
+    {
+        _hintText.text = "Find the door";
     }
     #endregion
 }
