@@ -63,7 +63,6 @@ public class Enemy : MonoBehaviour, IDamageable
         _ani.SetBool("attack", false);
         _ani.SetBool("die", true);
 
-        EventsManager.instance.ZombieDie();
         Debug.Log($"{name} Died!!!!");
         Invoke("ZDestroy", 1.8f);
     }
