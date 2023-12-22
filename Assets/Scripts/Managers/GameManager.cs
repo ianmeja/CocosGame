@@ -53,12 +53,12 @@ public class GameManager : MonoBehaviour
     private void OnLevelChange()
     {
         _nextLevelFlag = true;
+        GameObject finalChest = Instantiate(
+            _chestPrefab, 
+            _chestPrefab.transform.position, 
+            _chestPrefab.transform.rotation
+        );
         if(SceneManager.GetActiveScene().buildIndex == (int)Levels.Level_1){
-            GameObject finalChest = Instantiate(
-                _chestPrefab, 
-                _chestPrefab.transform.position, 
-                _chestPrefab.transform.rotation
-            );
             _cmvc2.m_LookAt = finalChest.transform;
             _cmvc4.m_LookAt = finalChest.transform;
         }

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6200720779110778437}
   - component: {fileID: 6200720779116484477}
+  - component: {fileID: 6908068678300737195}
   m_Layer: 0
   m_Name: WoodChest
   m_TagString: Untagged
@@ -85,6 +86,19 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.00000011920929, y: 0.9934905, z: 0.046147406}
     m_Extent: {x: 1.4447958, y: 0.99102205, z: 0.86538196}
   m_DirtyAABB: 0
+--- !u!65 &6908068678300737195
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6200720779111275109}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.8895922, y: 1.9820441, z: 1.7307643}
+  m_Center: {x: -0.0000039339066, y: 0.9934905, z: 0.04614551}
 --- !u!1 &6200720779111275129
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,6 +215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _openChestParameter: 0
   _consumiblePrefab: {fileID: 1000013846074356, guid: 11e31a2ebb4e6e246bcf8c0ba034a031, type: 3}
+  _particles: {fileID: 0}
 --- !u!1001 &7577812831630561782
 PrefabInstance:
   m_ObjectHideFlags: 0

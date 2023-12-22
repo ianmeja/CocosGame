@@ -31,6 +31,7 @@ public class LoadScreenManager : MonoBehaviour
 
             if(operation.progress >= .90f)
             {
+                _progressBar.fillAmount = 1;
                 _progressText.text = "Press spaceBar to continue...";
 
                 if(Input.GetKeyDown(KeyCode.Space)){
