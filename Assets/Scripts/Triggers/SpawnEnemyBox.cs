@@ -14,11 +14,12 @@ public class SpawnEnemyBox : MonoBehaviour
 
     private void OnOleadaActivada(int oleada)
     {
-        if(!_nextLevel && transform.position.y < 1) StartCoroutine(GenerarZombiesEnCaja(oleada));
+        //if(!_nextLevel && transform.position.y < 1) StartCoroutine(GenerarZombiesEnCaja(oleada));
+        if(!_nextLevel && transform.position.y < 1) GenerarZombiesEnCaja(oleada);
     }
 
     // Función para activar la generación de zombies
-    private IEnumerator GenerarZombiesEnCaja(int oleada)
+    private void GenerarZombiesEnCaja(int oleada)
     {
         for (int i = 0; i < oleada & !_nextLevel; i++)
         {
@@ -27,7 +28,7 @@ public class SpawnEnemyBox : MonoBehaviour
                 transform.position + Random.insideUnitSphere,
                 Quaternion.Euler(0, Random.Range(0,360), 0)
             );
-            yield return new WaitForSeconds(2);
+            //yield return new WaitForSeconds(2);
         }
     }
 }

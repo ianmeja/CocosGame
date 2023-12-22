@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using static Enums;
 using UnityEngine.SceneManagement;
 using System;
+using UnityEngine.Playables;
+using Cinemachine;
 
 public class GameManager : MonoBehaviour
 {
@@ -45,16 +47,21 @@ public class GameManager : MonoBehaviour
 
     #region GAME_LEVELS
     private bool _nextLevelFlag;
-    //[SerializeField] private GameObject _chestPrefab;
-    //[SerializeField] private GameObject _finalChest;
+    [SerializeField] private GameObject _chestPrefab;
+    public CinemachineVirtualCamera _cmvc2;
+    public CinemachineVirtualCamera _cmvc4;
     private void OnLevelChange()
     {
         _nextLevelFlag = true;
-        // GameObject finalChest = Instantiate(
-        //     _chestPrefab, 
-        //     _finalChest.transform.position, 
-        //     _finalChest.transform.rotation
-        // );
+        if(SceneManager.GetActiveScene().buildIndex == (int)Levels.Level_1){
+            GameObject finalChest = Instantiate(
+                _chestPrefab, 
+                _chestPrefab.transform.position, 
+                _chestPrefab.transform.rotation
+            );
+            _cmvc2.m_LookAt = finalChest.transform;
+            _cmvc4.m_LookAt = finalChest.transform;
+        }
     }
     #endregion
 

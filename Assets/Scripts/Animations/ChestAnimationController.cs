@@ -7,6 +7,7 @@ public class ChestAnimationController : MonoBehaviour
     private Animator _animator;
     [SerializeField] private bool _openChestParameter;
     [SerializeField] private GameObject _consumiblePrefab;
+    [SerializeField] private GameObject _particles;
 
     private void Start()
     {
@@ -28,6 +29,9 @@ public class ChestAnimationController : MonoBehaviour
                 _consumiblePrefab,
                 transform.position + transform.forward * 2 + transform.up, transform.rotation
         );
+        if(_particles!=null){
+            _particles.SetActive(false);
+        }
     }
 
     private void SetParameterFlags(bool doGateOpen)
