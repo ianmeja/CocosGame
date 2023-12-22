@@ -6694,7 +6694,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e681867d938ab4892b56d8303278c61f, type: 3}
   _avatar: {fileID: 1637055215}
   _tiempoRestanteText: {fileID: 333687062}
-  _tiempoTotal: 20
+  _tiempoTotal: 120
   _hintText: {fileID: 524661650}
 --- !u!114 &418505563
 MonoBehaviour:
@@ -6708,7 +6708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da904b5993d5b4725a15843f3d31f7db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tiempoHastaSiguienteOleada: 10
+  _tiempoHastaSiguienteOleada: 30
   _isGameOver: 0
   _isVictory: 0
   _gameOverMessage: {fileID: 1261727866}
