@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.PackageManager;
-using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.Animations;
 
@@ -40,7 +38,7 @@ public class ZombieAttack : MonoBehaviour
 
             other.gameObject.GetComponent<Actor>().TakeDamage(stats.Damage);
 
-            Invoke("EndAnimation", 2f);
+            Invoke("EndAnimation", 1.8f);
         }
     }
     #endregion

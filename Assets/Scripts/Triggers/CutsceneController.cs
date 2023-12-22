@@ -7,6 +7,7 @@ using UnityEngine.Playables;
 public class CutsceneController : MonoBehaviour
 {
     private PlayableDirector _director;
+    [SerializeField] private GameObject _canva; 
     
     // Start is called before the first frame update
     void Start()
@@ -17,5 +18,6 @@ public class CutsceneController : MonoBehaviour
 
     void OnLevelChange(){
         _director.Play();
+        _canva.SetActive(false);
     }
 }
