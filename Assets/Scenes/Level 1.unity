@@ -6734,10 +6734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da904b5993d5b4725a15843f3d31f7db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tiempoHastaSiguienteOleada: 5
-  _chestPrefab: {fileID: 7390900080912301119, guid: 05e2e6d4f9b7f4613ba8c382cef9e9a8, type: 3}
-  _cmvc2: {fileID: 1875142999}
-  _cmvc4: {fileID: 1413459044}
+  _tiempoHastaSiguienteOleada: 10
   _isGameOver: 0
   _isVictory: 0
   _gameOverMessage: {fileID: 1261727866}
