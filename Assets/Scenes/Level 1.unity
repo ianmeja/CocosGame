@@ -6720,7 +6720,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e681867d938ab4892b56d8303278c61f, type: 3}
   _avatar: {fileID: 1637055215}
   _tiempoRestanteText: {fileID: 333687062}
-  _tiempoTotal: 5
+  _tiempoTotal: 120
   _hintText: {fileID: 524661650}
 --- !u!114 &418505563
 MonoBehaviour:
